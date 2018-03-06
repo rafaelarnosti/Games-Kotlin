@@ -24,4 +24,15 @@ class GameController{
         gameServices.Salvar(game)
     }
 
+
+    @GetMapping(value = "/titulo/{titulo}")
+    fun buscarPor(@PathVariable(value = "titulo") titulo : String) : List<Game>{
+        return gameServices.buscarPor(titulo)
+    }
+
+    @DeleteMapping(value = "{id}")
+    fun apagar(@PathVariable(value = "id") id : String){
+        gameServices.apagar(id)
+    }
+
 }
